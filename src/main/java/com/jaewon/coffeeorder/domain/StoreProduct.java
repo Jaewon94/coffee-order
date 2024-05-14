@@ -10,14 +10,21 @@ import org.springframework.data.relational.core.mapping.Table;
 public class StoreProduct {
 
     @Id
-    private String storeProductId;
+    private int storeProductId;
 
     @Column
-    private String storeId;
+    private int storeId;
 
     @Column
-    private String productId;
+    private int productId;
 
     @Column
-    private String stockQuantity;
+    private int stockQuantity;
+
+    public void adjustStockQuantity(int buyQuantity) {
+        if(stockQuantity < buyQuantity) {
+            throw new RuntimeException("재고보다 많을 수 없습니다.");
+        }
+        this.stockQuantity = this.stockQuantity - buyQuantity;
+    }
 }

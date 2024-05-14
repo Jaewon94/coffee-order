@@ -44,3 +44,27 @@ CREATE table customers
     address varchar(100) not null,
     primary key (customer_id)
 );
+
+drop table if exists stores;
+
+CREATE TABLE stores
+(
+    store_id int not null AUTO_INCREMENT,
+    name varchar(100) not null ,
+    address varchar(100) not null ,
+    phone_number varchar(100) not null ,
+    open_at varchar(100) not null ,
+    close_at varchar(100) not null ,
+    primary key (store_id)
+);
+
+drop table if exists store_products;
+
+CREATE TABLE store_products
+(
+    store_product_id int not null AUTO_INCREMENT,
+    store_id int not null ,
+    product_id int not null ,
+    stock_quantity int not null ,
+    primary key (store_product_id)
+);

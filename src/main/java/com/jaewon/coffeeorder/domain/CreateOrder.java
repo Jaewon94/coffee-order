@@ -10,5 +10,8 @@ import java.util.Map;
 public class CreateOrder {
 
     private int customerId;
+    private int storeId;
     private Map<Integer, Integer> quantityByProduct;
+
+
 }
